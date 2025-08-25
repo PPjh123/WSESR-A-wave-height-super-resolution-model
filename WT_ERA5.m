@@ -1,10 +1,10 @@
 clear
 clc
-load('D:\DATA\Wave_height_super_resolution\Data\ERA5-3h\S4_2021_2024.mat')
+load('D:\DATA\Wave_height_super_resolution\Data\ERA5-3h\S3_2021_2024.mat')
 for i=1:size(swh,3)
     swh_wt(:,:,:,i)=WT2D(swh(:,:,i));
 end
-save ERA5-3h-wt\S4_2021_2024.mat swh_wt%%%%%
+save ERA5-3h-wt\S3_2021_2024.mat swh_wt%%%%%
 
 
 function result=WT2D(input)
@@ -30,4 +30,5 @@ result(:,:,5) = wrcoef2('a',C,S,wavelet,1);
 result(:,:,6) = wrcoef2('h',C,S,wavelet,1); 
 result(:,:,7) = wrcoef2('v',C,S,wavelet,1);
 result(:,:,8) = wrcoef2('d',C,S,wavelet,1); 
+
 end
